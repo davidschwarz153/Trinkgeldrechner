@@ -9,6 +9,7 @@ btnClick?.addEventListener('click', calcBill)
 function calcBill(){
     const bill = billValue.valueAsNumber
     const ppl = pplValue.valueAsNumber
+    console.log(bill);
     const service = Number(serviceValue.value)
     const res = bill 
     const resTip = bill * (service/100)
@@ -22,7 +23,6 @@ function calcBill(){
     if (sum !== null) {
         sum.textContent = `${resDiv.toFixed(2)} € pro Person `
     }
-    
 }
 
 

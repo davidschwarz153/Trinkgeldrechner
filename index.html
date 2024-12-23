@@ -1,44 +1,84 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trinkgeldrechner</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script type="module" src="./sc.ts"></script>
-</head>
-<body class="bg-gray-100 flex items-center justify-center h-screen">
-  <div class="bg-white rounded-lg shadow-lg p-6 max-w-md w-full">
-    <h1 class="text-2xl font-bold text-gray-800 text-center mb-6">Trinkgeldrechner</h1>
-    <div class="mb-4">
-      <label for="bill" class="block text-sm font-medium text-gray-700">Rechnungsbetrag</label>
-      <input id="bill" type="number" placeholder="Enter bill amount" 
-        class="cursor mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
-    </div>
-    <div class="mb-4">
-      <label for="ppl" class="block text-sm font-medium text-gray-700">Anzahl von Zahlenden</label>
-      <input id="ppl" type="number" placeholder="Enter number of people" 
-        class=" cursor mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
-    </div>
-    <div class="mb-4">
-        <label for="service" class="block text-sm font-medium text-gray-700">Wie war Ihr Service</label>
-        <select class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-gray-400" name="servic" id="service">
-            <option value="1">Bitte wähle aus ...</option>
-            <option value="2">Schlechter Service</option>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trinkgeldrechner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="./sc.ts"></script>
+  </head>
+  <body
+    class="bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center min-h-screen p-4"
+  >
+    <div class="bg-white rounded-2xl shadow-xl p-10 max-w-3xl w-full">
+      <h1 class="text-4xl font-extrabold text-blue-700 text-center mb-8">
+        Trinkgeldrechner
+      </h1>
+
+      <form class="space-y-6">
+        <div>
+          <label for="bill" class="block text-sm font-semibold text-gray-700"
+            >Rechnungsbetrag (€)</label
+          >
+          <input
+            id="bill"
+            type="number"
+            placeholder="z. B. 50"
+            class="mt-3 block w-full px-5 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 text-lg"
+          />
+        </div>
+
+        <div>
+          <label for="ppl" class="block text-sm font-semibold text-gray-700"
+            >Anzahl der Personen</label
+          >
+          <input
+            id="ppl"
+            type="number"
+            placeholder="z. B. 2"
+            class="mt-3 block w-full px-5 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 text-lg"
+          />
+        </div>
+
+        <div>
+          <label for="service" class="block text-sm font-semibold text-gray-700"
+            >Bewertung des Services</label
+          >
+          <select
+            id="service"
+            class="mt-3 block w-full px-5 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 text-lg text-gray-600"
+          >
+            <option value="1" disabled selected>Bitte wähle aus ...</option>
+            <option value="5">Schlechter Service</option>
             <option value="10">Mittlerer Service</option>
-            <option value="20">Super Service</option>
-        </select>
+            <option value="20">Ausgezeichneter Service</option>
+          </select>
+        </div>
+
+        <button
+          type="button"
+          class="btn-click w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 px-6 rounded-lg font-bold shadow-lg hover:from-blue-700 hover:to-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-400 focus:ring-offset-2"
+        >
+          Berechne
+        </button>
+      </form>
+
+      <div class="mt-8 space-y-4">
+        <div
+          class="sumBill text-lg font-medium text-gray-800 text-center"
+        ></div>
+        <div class="sumTip text-lg font-medium text-gray-800 text-center"></div>
+        <div class="sum text-2xl font-bold text-blue-700 text-center"></div>
+      </div>
+
+      <footer class="text-center mt-10">
+        <a
+          href="https://github.com/davidschwarz153/Trinkgeldrechner.git"
+          target="_blank"
+          class="text-blue-600 hover:underline text-sm"
+          >by David Schwarz</a
+        >
+      </footer>
     </div>
-    <button class="btn-click w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-      Berechne
-    </button>
-    <div class="sumBill flex flex-col mt-6 text-lg font-semibold text-gray-800 text-center"></div>
-    <div class="sumTip flex flex-col mt-6 text-lg font-semibold text-gray-800 text-center"></div>
-    <div class="sum flex flex-col mt-6 mb-6 text-lg font-semibold text-gray-800 text-center"></div>
-    <a class="cursor" href="https://github.com/davidschwarz153/Trinkgeldrechner.git" target="_blank">by David Schwarz</a>
-  </div>
-  
-</body>
+  </body>
 </html>
